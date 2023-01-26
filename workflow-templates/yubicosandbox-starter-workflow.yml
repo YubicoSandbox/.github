@@ -1,0 +1,20 @@
+name: YubicoSandbox Starter Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name to greet'
+        required: true
+        type: string
+        default: 'World'
+
+permissions: {}
+
+jobs:
+  print-hello:
+    runs-on: ubuntu-latest
+    if:  ${{ inputs.name }} 
+    steps:
+      - name: Print a 'hello' greeting
+        run: echo Hello, ${{ inputs.name }}!" 
